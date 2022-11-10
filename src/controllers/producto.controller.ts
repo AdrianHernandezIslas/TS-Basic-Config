@@ -5,5 +5,7 @@ export function indexViewPoducto(req: Request, res: Response) {
 }
 
 export function createProducto(req: Request, res: Response) {
-  
+  console.log(req.body)
+  console.log(req.file);
+  res.send("ok");
 }

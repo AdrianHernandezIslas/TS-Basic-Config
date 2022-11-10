@@ -5,7 +5,7 @@ import storageMulter from "../middlewares/multer.middleware";
 const productoRouter: Router = Router();
 
 productoRouter.get("/view", indexViewPoducto);
-productoRouter.post("/",storageMulter.single("imagen"), indexViewPoducto);
+productoRouter.post("/",storageMulter.single("imagen"), createProducto);
 
 
 export default productoRouter;

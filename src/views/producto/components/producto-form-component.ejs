@@ -1,5 +1,5 @@
 <div class="card mx-basic my-basic">
-    <form id="formProducto" action="/api/v1/example/create" method="post" enctype="multipart/form-data">
+    <form id="formProducto" action="/catalogo/producto/" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="input-field col s12">
                 <input id="nombreProducto" name="nombreProducto" type="text" class="validate">
@@ -25,10 +25,10 @@
                 <div class="file-field input-field">
                     <div class="btn">
                         <span>Imagen</span>
-                        <input type="file">
+                        <input  id="imagen" name="imagen"  type="file">
                     </div>
                     <div class="file-path-wrapper">
-                        <input id="imagen" name="imagen" class="file-path validate" type="text">
+                        <input class="file-path validate" type="text">
                     </div>
                 </div>
             </div>
