@@ -5,9 +5,8 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import indexRouter from "./routes/index.route";
-import exampleRouter from "./routes/example.route";
-import exampleV2Router from "./routes/example.v2.route";
-import logginRouter from "./routes/loggin.router";
+import productoRouter from "./routes/producto.route";
+
 
 const app: Application = express();
 
@@ -27,8 +26,6 @@ app.use(express.static(path.join(__dirname,'./public')))
 
 //routes
 app.use("/", indexRouter);
-app.use("/api/v1/example",exampleRouter);
-app.use("/api/v2/example",exampleV2Router);
-app.use("/view/loggin",logginRouter);
+app.use("/catalogo/producto",productoRouter);
 
 export default app;

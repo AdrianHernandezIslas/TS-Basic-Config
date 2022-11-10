@@ -1,0 +1,38 @@
+<div class="card mx-basic my-basic">
+    <form id="formProducto" action="/api/v1/example/create" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="nombreProducto" name="nombreProducto" type="text" class="validate">
+                <label for="nombreProducto">Nombre</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4">
+                <input id="precioCompra" name="precioCompra" type="text" class="validate">
+                <label for="precioCompra">Precio Compra</label>
+            </div>
+            <div class="input-field col s4">
+                <input id="precioVenta" name="precioVenta" type="text" class="validate">
+                <label for="precioVenta">Precion Venta</label>
+            </div>
+            <div class="input-field col s4">
+                <input id="existencia" name="existencia" type="text" class="validate">
+                <label for="existencia">Existencia</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>Imagen</span>
+                        <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input id="imagen" name="imagen" class="file-path validate" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" id="btnGuardar" class="waves-effect waves-light btn my-basic mx-basic">Registrar</button>
+    </form>
+</div>

@@ -1,2 +1,3 @@
-import '../models/example.model';
-import '../models/pay.model';
+import '../models/producto.model';
+import '../models/empleado.model';
+import '../models/venta.model';

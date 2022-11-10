@@ -4,7 +4,7 @@ import "./database/models.config";
 
 async function main() {
   sequelize
-    .sync({ alter: true })
+    .sync({alter: true })
     .then(() => {})
     .catch((err) => console.log(err));
     
