@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
 import { ProductoModel } from "../models/producto.model";
 
-export function indexViewPoducto(req: Request, res: Response) {
-  return res.render("producto/producto-view");
+export async function indexViewPoducto(req: Request, res: Response) {
+  const productos = await ProductoModel.findAll({raw:true})
+  return res.render("producto/producto-view",{productos});
 }
 
 export async function createProducto(req: Request, res: Response) {
