@@ -1,32 +1,36 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../database/database.config";
-import PayType from "../types/pay.type";
+import EmpleadoType from "../types/empleado.type";
 
-export class PayModel extends Model<PayType> {}
+export class EmpleadoModel extends Model<EmpleadoType> {}
 
-PayModel.init(
+EmpleadoModel.init(
   {
-    idPay: {
+    idEmpleado: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true,
     },
-    amount: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    description: {
+    nombre: {
       type: DataTypes.STRING(50),
       allowNull: false,
     },
-    idStatus: {
-      type: DataTypes.INTEGER,
+    primerApellido: {
+      type: DataTypes.STRING(50),
       allowNull: false,
     },
+    segundoApellido: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    genero:{
+      type: DataTypes.STRING(1),
+      allowNull: false,
+    }
   },
   {
     sequelize,
-    tableName: "pay",
+    tableName: "empleado",
   }
 );
