@@ -23,5 +23,9 @@ footer {
 }
 body{
     background-color: #f5f8fa;
+}
 
+.img-icon{
+    height: 100px;
+    width: 120px;
 }
