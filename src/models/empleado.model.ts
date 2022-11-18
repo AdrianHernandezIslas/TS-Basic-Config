@@ -1,6 +1,7 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../database/database.config";
 import EmpleadoType from "../types/empleado.type";
+import { UsuarioModel } from "./usuario.model";
 
 export class EmpleadoModel extends Model<EmpleadoType> {}
 
@@ -21,7 +22,7 @@ EmpleadoModel.init(
       allowNull: false,
     },
     segundoApellido: {
-      type: DataTypes.INTEGER,
+      type:DataTypes.STRING(50),
       allowNull: true,
     },
     genero:{
@@ -34,3 +35,8 @@ EmpleadoModel.init(
     tableName: "empleado",
   }
 );
+
+EmpleadoModel.hasMany(UsuarioModel,{
+  sourceKey:"idEmpleado",
+  foreignKey:"idEmpleado"
+});
