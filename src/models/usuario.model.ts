@@ -3,8 +3,7 @@ import { sequelize } from "../database/database.config";
 import UsuarioType from "../types/usuario.type";
 import { SesionModel } from "./sesion.model";
 
-export class UsuarioModel extends Model<UsuarioType> {
-}
+export class UsuarioModel extends Model<UsuarioType> {}
 
 UsuarioModel.init(
   {
@@ -14,13 +13,19 @@ UsuarioModel.init(
       allowNull: false,
       autoIncrement: true,
     },
-    idEmpleado:{
+    idEmpleado: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
     correo: {
       type: DataTypes.STRING(100),
       allowNull: false,
+      unique: { name: "uCorreoUsuario", msg: "Correo Anteriormente Registrado" },
+      validate: {
+        isEmail: {
+          msg: "no es un correo",
+        },
+      },
     },
     contrasenia: {
       type: DataTypes.STRING(100),
@@ -47,8 +52,7 @@ UsuarioModel.init(
   }
 );
 
-
 UsuarioModel.hasMany(SesionModel, {
   foreignKey: "idUsuario",
-  sourceKey:"idUsuario"
+  sourceKey: "idUsuario",
 });

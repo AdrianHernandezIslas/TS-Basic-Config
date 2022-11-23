@@ -5,8 +5,8 @@ export function hashPassword(password: string) {
   return bcrypt.hashSync(password, salt);
 }
 
-export function isValidPassword(pass: string, passHash: string) {
-  return bcrypt.compareSync(pass, passHash);
+export function isValidPassword(pass: string, passHash: string | undefined) {
+  return bcrypt.compareSync(pass, passHash || "");
 }
 
 export function generatePassword() {
