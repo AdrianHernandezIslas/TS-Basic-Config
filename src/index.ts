@@ -5,7 +5,9 @@ import "./database/models.config";
 async function main() {
   sequelize
     .sync({alter: true })
-    .then(() => {})
+    .then(() => {
+      console.log("db ok");
+    })
     .catch((err) => console.log(err));
     
   await app.listen(app.get("port"));
