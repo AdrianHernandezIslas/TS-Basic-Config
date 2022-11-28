@@ -1,3 +1,4 @@
+import { Request, Response, NextFunction } from "express";
 import session from "express-session";
 
 import UsuarioType from "../types/usuario.type";
@@ -8,7 +9,7 @@ declare module "express-session" {
   }
 }
 
-export default session({
+export const sessionConfig = session({
   name: "session-cookie",
   secret: "secreto123",
   resave: false,
@@ -17,6 +18,13 @@ export default session({
     secure: false,
     httpOnly: true,
     signed: true,
-    maxAge: 5 * (60 * 1000),
+    maxAge: 10 * (60 * 1000),
   },
 });
+
+export const sessionMiddleware = (req: Request, res: Response, next: NextFunction)=> {
+  const {user} =  req.session;
+  console.log(user);
+  res.locals.user = user;
+  next();
+}

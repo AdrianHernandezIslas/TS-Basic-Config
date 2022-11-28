@@ -32,3 +32,12 @@ export async function logginUsuario(req: Request, res: Response) {
     res.send("error");
   }
 }
+
+export async function loggout(req: Request, res: Response){
+  req.session.destroy((err)=>{
+    if(err){
+      console.log("error al cerrar sesion");
+    }
+    res.redirect("/");
+  });
+}
