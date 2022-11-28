@@ -8,10 +8,11 @@
     "url": ""
   },
   "scripts": {
-    "build": "tsc",
+    "build": "npm run init && tsc",
     "clean": "rimraf dist",
     "start": "npm run build && node dist/src/index.js",
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon src/index.ts",
+    "init": "npm install -D -s"
   },
   "keywords": [],
   "author": "AdrianHernandezIslas",
