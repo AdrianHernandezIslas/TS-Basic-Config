@@ -13,5 +13,10 @@ export default session({
   secret: "secreto123",
   resave: false,
   saveUninitialized: false,
-  cookie: { secure: false, httpOnly: true, signed: true, maxAge: 1 * (60 * 1000) },
+  cookie: {
+    secure: false,
+    httpOnly: true,
+    signed: true,
+    maxAge: 5 * (60 * 1000),
+  },
 });

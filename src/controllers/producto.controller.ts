@@ -2,7 +2,9 @@ import { Request, Response } from "express";
 import { ProductoModel } from "../models/producto.model";
 
 export async function indexViewPoducto(req: Request, res: Response) {
-  return res.render("producto/producto-view");
+  const user = req.session;
+  console.log(user);
+  return res.render("producto/producto-view",{user});
 }
 
 export async function readProducto(req: Request, res: Response) {

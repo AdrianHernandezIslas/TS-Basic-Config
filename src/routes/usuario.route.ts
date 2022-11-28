@@ -7,6 +7,11 @@ import {
 
 const usuarioRouter: Router = Router();
 
-usuarioRouter.post("/", createContraseniaUsuarioMiddleware, cifrarContraseniaUsuarioMiddleware, createUsuario);
+usuarioRouter.post(
+  "/",
+  createContraseniaUsuarioMiddleware,
+  cifrarContraseniaUsuarioMiddleware,
+  createUsuario
+);
 
 export default usuarioRouter;
