@@ -8,7 +8,7 @@
     "url": ""
   },
   "scripts": {
-    "build": "npm run init && tsc",
+    "build": "tsc",
     "clean": "rimraf dist",
     "start": "npm run build && node dist/src/index.js",
     "dev": "nodemon src/index.ts",
